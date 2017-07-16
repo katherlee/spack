@@ -55,6 +55,9 @@ class Openblas(MakefilePackage):
 
     patch('make.patch', when='@0.2.16:')
     #  This patch is in a pull request to OpenBLAS that has not been handled
+    #  https://github.com/xianyi/OpenBLAS/pull/1098
+    patch('power8.patch', when'@0.2.18:0.2.19')
+    #  This patch is in a pull request to OpenBLAS that has not been handled
     #  https://github.com/xianyi/OpenBLAS/pull/915
     patch('openblas_icc.patch', when='%intel')
     patch('openblas_icc_openmp.patch', when='%intel@16.0:')
